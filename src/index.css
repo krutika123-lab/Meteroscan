@@ -1,0 +1,1376 @@
+/* =========================================================
+   METROSCAN - PRODUCT INSPECTION FRONTEND
+   Global Styles
+   ========================================================= */
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #050a11;
+  color: #e8eef7;
+
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(28, 92, 160, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(38, 104, 180, 0.08),
+      transparent 30%
+    ),
+    #050a11;
+}
+
+
+/* =========================================================
+   TOP NAVBAR
+   ========================================================= */
+
+.topbar {
+  width: 100%;
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  border-bottom: 1px solid #172434;
+
+  background: rgba(5, 10, 17, 0.95);
+
+  color: #91a2b7;
+
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #e7eef8;
+
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.brand-icon {
+  color: #1f8cff;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+.topbar strong {
+  color: #dce8f5;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.page-container {
+  width: min(1100px, 92%);
+
+  margin: 0 auto;
+
+  padding: 70px 0 100px;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.page-heading {
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  color: #2589e8;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin-top: 12px;
+
+  color: #f2f6fb;
+
+  font-size: clamp(38px, 5vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+}
+
+.page-heading p {
+  margin-top: 18px;
+
+  max-width: 700px;
+
+  color: #91a2b7;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.form-card {
+  padding: 38px;
+
+  background: #101925;
+
+  border: 1px solid #26384d;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #dce7f4;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  min-height: 64px;
+
+  padding: 0 18px;
+
+  color: #eaf1fa;
+
+  background: #08111d;
+
+  border: 1px solid #2a4059;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+  padding-top: 16px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #66778c;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2589e8;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 137, 232, 0.12);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   BUTTONS
+   IMPORTANT:
+   .primary-btn is a normal rectangular button.
+   Camera button has its own separate CSS below.
+   ========================================================= */
+
+.primary-btn {
+  min-height: 50px;
+
+  padding: 13px 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #1976d2;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: #2084e5;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 25px rgba(25, 118, 210, 0.25);
+}
+
+.primary-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.primary-btn:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* Secondary button */
+
+.secondary-btn {
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #172536;
+
+  border: 1px solid #30445b;
+
+  color: #d9e4f0;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: #1d3046;
+
+  border-color: #43617e;
+}
+
+
+/* =========================================================
+   NEW INSPECTION
+   ========================================================= */
+
+.inspection-form {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+}
+
+.form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   SCAN SUMMARY
+   ========================================================= */
+
+.scan-summary {
+  width: fit-content;
+
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+
+  padding: 16px 20px;
+
+  margin-bottom: 14px;
+
+  background: #0d1723;
+
+  border: 1px solid #172b40;
+
+  border-radius: 13px;
+
+  color: #7f91a6;
+}
+
+.scan-summary strong {
+  color: #e9f2fc;
+
+  font-size: 26px;
+}
+
+.scan-summary span {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SCAN PROGRESS
+   ========================================================= */
+
+.scan-progress {
+  width: 100%;
+  height: 8px;
+
+  margin-bottom: 35px;
+
+  overflow: hidden;
+
+  background: #111f2d;
+
+  border-radius: 999px;
+}
+
+.scan-progress-bar {
+  height: 100%;
+
+  background: #2589e8;
+
+  border-radius: inherit;
+
+  transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   SCAN GRID
+   ========================================================= */
+
+.scan-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.scan-side {
+  min-width: 0;
+
+  padding: 18px;
+
+  background: #0d1723;
+
+  border: 1px solid #1e3248;
+
+  border-radius: 17px;
+}
+
+
+/* =========================================================
+   IMAGE UPLOADER
+   ========================================================= */
+
+.image-uploader {
+  position: relative;
+
+  width: 100%;
+  min-height: 260px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #07101a;
+
+  border: 1px dashed #30465e;
+
+  border-radius: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.image-uploader:hover {
+  border-color: #2589e8;
+
+  background: #091521;
+}
+
+.image-uploader input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  width: 100%;
+  min-height: 260px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #263d55;
+
+  border-radius: 50%;
+
+  color: #72869c;
+
+  font-size: 28px;
+}
+
+.upload-title {
+  color: #b9c9da;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.upload-subtitle {
+  margin-top: 5px;
+
+  color: #61748a;
+
+  font-size: 13px;
+}
+
+
+/* Uploaded image */
+
+.uploaded-image-container {
+  position: relative;
+
+  width: 100%;
+  min-height: 260px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+}
+
+.uploaded-image {
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+}
+
+.image-delete-btn {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.image-delete-btn:hover {
+  background: rgba(180, 35, 50, 0.9);
+}
+
+
+/* =========================================================
+   CAMERA SIDE BUTTON
+   This is NOT .capture-btn.
+   ========================================================= */
+
+.camera-side-btn {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-top: 13px;
+
+  padding: 11px 15px;
+
+  border: 1px solid #2b4057;
+
+  border-radius: 10px;
+
+  background: #101f30;
+
+  color: #b9cbe0;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.camera-side-btn:hover {
+  background: #162a40;
+
+  border-color: #2589e8;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PROCESS SECTION
+   ========================================================= */
+
+.process-section {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 30px;
+}
+
+.process-btn {
+  min-width: 220px;
+}
+
+
+/* =========================================================
+   CAMERA MODAL
+   ========================================================= */
+
+.camera-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  /*
+    Background is intentionally translucent.
+    The page remains slightly visible behind the camera.
+  */
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(3px);
+}
+
+.camera-modal {
+  width: min(900px, 95vw);
+
+  max-height: 92vh;
+
+  overflow: hidden;
+
+  background: #0b1422;
+
+  border: 1px solid #29415b;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.65);
+
+  animation: cameraModalIn 0.18s ease-out;
+}
+
+@keyframes cameraModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   CAMERA HEADER
+   ========================================================= */
+
+.camera-header {
+  min-height: 90px;
+
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #1d3045;
+}
+
+.camera-header h2 {
+  margin-top: 4px;
+
+  color: #f1f6fc;
+
+  font-size: 25px;
+}
+
+.camera-close {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #2b4056;
+
+  border-radius: 50%;
+
+  background: #111f2e;
+
+  color: #dbe6f1;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.camera-close:hover {
+  background: #1c3046;
+
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CAMERA VIEW
+   ========================================================= */
+
+.camera-view {
+  position: relative;
+
+  width: 100%;
+
+  height: min(60vh, 520px);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #000;
+}
+
+
+/* =========================================================
+   CAMERA LOADING / ERROR
+   ========================================================= */
+
+.camera-message {
+  width: 100%;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #c9d6e4;
+}
+
+.camera-message p {
+  margin-top: 12px;
+
+  color: #8fa1b5;
+}
+
+.camera-message.error {
+  max-width: 600px;
+}
+
+.camera-message h3 {
+  margin-top: 5px;
+
+  color: #edf4fb;
+
+  font-size: 22px;
+}
+
+.camera-error-icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  background: #34151c;
+
+  border: 1px solid #70303b;
+
+  color: #ff7886;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.camera-help {
+  margin-top: 20px;
+
+  font-size: 13px;
+}
+
+.camera-spinner {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 12px;
+
+  border: 4px solid #25394e;
+
+  border-top-color: #2589e8;
+
+  border-radius: 50%;
+
+  animation: cameraSpin 0.8s linear infinite;
+}
+
+@keyframes cameraSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   CAMERA CONTROLS
+   ========================================================= */
+
+.camera-controls {
+  min-height: 110px;
+
+  padding: 18px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  border-top: 1px solid #1d3045;
+
+  background: #0b1422;
+}
+
+
+/*
+   VERY IMPORTANT:
+   This selector is scoped to the camera modal.
+
+   Therefore .capture-btn cannot accidentally make
+   "Start Inspection" or other buttons huge.
+*/
+
+.camera-modal .capture-btn {
+  width: 82px;
+  height: 82px;
+
+  flex: 0 0 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 6px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #e63950;
+
+  color: transparent;
+
+  font-size: 0;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.45);
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.camera-modal .capture-btn:hover:not(:disabled) {
+  transform: scale(1.06);
+
+  background: #ed4057;
+}
+
+.camera-modal .capture-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.camera-modal .capture-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* White inner circle */
+
+.camera-modal .capture-circle {
+  width: 25px;
+  height: 25px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   PROCESSING
+   ========================================================= */
+
+.processing-container {
+  min-height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.processing-spinner {
+  width: 60px;
+  height: 60px;
+
+  border: 5px solid #203348;
+
+  border-top-color: #2589e8;
+
+  border-radius: 50%;
+
+  animation: cameraSpin 0.8s linear infinite;
+}
+
+.processing-container h2 {
+  margin-top: 25px;
+
+  color: #eef5fc;
+}
+
+.processing-container p {
+  margin-top: 10px;
+
+  color: #879aae;
+}
+
+
+/* =========================================================
+   COMPLIANCE BADGES
+   ========================================================= */
+
+.compliance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.compliance-badge.compliant {
+  background: rgba(32, 160, 95, 0.15);
+
+  border: 1px solid rgba(32, 160, 95, 0.4);
+
+  color: #63d99b;
+}
+
+.compliance-badge.violation {
+  background: rgba(225, 58, 72, 0.15);
+
+  border: 1px solid rgba(225, 58, 72, 0.4);
+
+  color: #ff7886;
+}
+
+.compliance-badge.review {
+  background: rgba(230, 166, 44, 0.15);
+
+  border: 1px solid rgba(230, 166, 44, 0.4);
+
+  color: #f2c45e;
+}
+
+
+/* =========================================================
+   DECLARATION TABLE
+   ========================================================= */
+
+.declaration-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: #0d1723;
+
+  border: 1px solid #20354b;
+
+  border-radius: 15px;
+}
+
+.declaration-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 700px;
+}
+
+.declaration-table th,
+.declaration-table td {
+  padding: 15px 17px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #1c3044;
+}
+
+.declaration-table th {
+  background: #101d2c;
+
+  color: #8fa4ba;
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+.declaration-table td {
+  color: #d5e1ed;
+
+  font-size: 14px;
+}
+
+.declaration-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   VIOLATION CARDS
+   ========================================================= */
+
+.violation-card {
+  padding: 20px;
+
+  background: #101923;
+
+  border: 1px solid #3c2930;
+
+  border-left: 4px solid #e63950;
+
+  border-radius: 13px;
+}
+
+.violation-card h3 {
+  color: #f2f5f9;
+
+  font-size: 17px;
+}
+
+.violation-card p {
+  margin-top: 8px;
+
+  color: #95a5b7;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   VIOLATION VIEWER
+   ========================================================= */
+
+.violation-viewer {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #020609;
+
+  border: 1px solid #253a50;
+
+  border-radius: 15px;
+}
+
+.violation-viewer img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+}
+
+.violation-marker {
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  border: 3px solid #ff5265;
+
+  border-radius: 50%;
+
+  background: rgba(255, 82, 101, 0.25);
+
+  box-shadow:
+    0 0 0 5px rgba(255, 82, 101, 0.12);
+}
+
+
+/* =========================================================
+   OCR RESULTS
+   ========================================================= */
+
+.ocr-result-card {
+  padding: 22px;
+
+  background: #0d1723;
+
+  border: 1px solid #20364d;
+
+  border-radius: 15px;
+}
+
+.ocr-result-card h3 {
+  margin-bottom: 12px;
+
+  color: #e7eff8;
+}
+
+.ocr-text {
+  padding: 16px;
+
+  background: #07101a;
+
+  border-radius: 10px;
+
+  color: #aebed0;
+
+  white-space: pre-wrap;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .page-container {
+    width: 92%;
+
+    padding-top: 45px;
+  }
+
+  .page-heading h1 {
+    font-size: 42px;
+  }
+
+  .scan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 25px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .topbar {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .topbar > span {
+    font-size: 12px;
+  }
+
+  .page-heading h1 {
+    font-size: 35px;
+  }
+
+  .page-heading p {
+    font-size: 15px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group select {
+    min-height: 56px;
+  }
+
+  .process-section {
+    justify-content: stretch;
+  }
+
+  .process-btn {
+    width: 100%;
+  }
+
+  .camera-modal-overlay {
+    padding: 10px;
+  }
+
+  .camera-modal {
+    width: 100%;
+
+    max-height: 95vh;
+
+    border-radius: 15px;
+  }
+
+  .camera-header {
+    min-height: 75px;
+
+    padding: 15px 17px;
+  }
+
+  .camera-header h2 {
+    font-size: 20px;
+  }
+
+  .camera-view {
+    height: 55vh;
+  }
+
+  .camera-controls {
+    min-height: 100px;
+
+    gap: 25px;
+  }
+
+  .camera-modal .capture-btn {
+    width: 72px;
+    height: 72px;
+
+    flex-basis: 72px;
+  }
+
+  .camera-modal .capture-circle {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2589e8;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   UTILITY
+   ========================================================= */
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}

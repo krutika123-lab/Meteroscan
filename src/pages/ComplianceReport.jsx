@@ -454,21 +454,23 @@ export default function ComplianceReport() {
 
         <div className="report-actions">
 
-          <button
-            className="secondary-btn"
-            onClick={handleBack}
-          >
-            ← Back to Results
-          </button>
+  <button
+    type="button"
+    className="secondary-btn"
+    onClick={() => navigate("/compliance-results")}
+  >
+    ← Back to Results
+  </button>
 
-          <button
-            className="primary-btn"
-            onClick={handleNewInspection}
-          >
-            Start New Inspection →
-          </button>
+  <button
+    type="button"
+    className="primary-btn"
+    onClick={() => navigate("/new-inspection")}
+  >
+    Start New Inspection →
+  </button>
 
-        </div>
+</div>
 
       </main>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+
 import DeclarationTable from "../components/DeclarationTable";
 import { getOCRResults } from "../api/inspectionApi";
 
@@ -87,16 +88,12 @@ export default function OCRResults() {
             ← Review Images
           </button>
 
-          <button
-            className="primary-btn"
-            onClick={() =>
-              navigate(
-                `/inspection/${id}/results`
-              )
-            }
-          >
-            Check Compliance →
-          </button>
+        <button
+  className="primary-btn"
+  onClick={() => navigate("/compliance-check")}
+>
+  Compliance Check →
+</button>
         </div>
       </div>
     </main>

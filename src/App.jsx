@@ -5,6 +5,8 @@ import ProductScan from "./pages/ProductScan.jsx";
 import Processing from "./pages/Processing.jsx";
 import OCRResults from "./pages/OCRResults.jsx";
 import ComplianceResults from "./pages/ComplianceResults.jsx";
+import ComplianceCheck from "./pages/ComplianceCheck";
+import ComplianceReport from "./pages/ComplianceReport";
 
 function App() {
   return (
@@ -50,6 +52,14 @@ function App() {
         path="/inspection/:id/results"
         element={<ComplianceResults />}
       />
+      <Route
+      path="/compliance-check"
+      element={<ComplianceCheck />}
+      />
+      <Route
+  path="/compliance-report"
+  element={<ComplianceReport />}
+/>
 
       {/* Unknown URL */}
       <Route

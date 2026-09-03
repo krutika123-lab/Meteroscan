@@ -458,7 +458,7 @@ export default function ComplianceReport() {
     type="button"
     className="secondary-btn"
     onClick={() =>
-      navigate("/inspection/:id/results", {
+      navigate("/compliance-check", {
         state: {
           productName,
           images,
@@ -469,7 +469,7 @@ export default function ComplianceReport() {
       })
     }
   >
-    ← Back to Results
+    ← Back to Compilance Check
   </button>
 
   <button

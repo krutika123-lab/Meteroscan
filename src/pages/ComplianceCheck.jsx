@@ -311,13 +311,7 @@ function ComplianceCheck() {
             {/* After checking */}
             {completed && (
               <>
-                <button
-                  type="button"
-                  className="secondary-btn"
-                  onClick={handleViewResults}
-                >
-                  View Compliance Results
-                </button>
+                
 
                 <button
                   type="button"
